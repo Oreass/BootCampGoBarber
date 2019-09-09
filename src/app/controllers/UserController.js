@@ -8,13 +8,13 @@ class UserController {
       return res.status(400).json({ error: 'User alredy exists' });
     }
 
-    {id,name,email,provider} = await User.crete(req.body);
+    const { id, name, email, provider } = await User.crete(req.body);
 
     return res.json({
       id,
       name,
       email,
-      provider
+      provider,
     });
   }
 }
